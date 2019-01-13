@@ -1,0 +1,40 @@
+.row {
+    display: "flex";
+    flex-wrap: "wrap";
+}
+
+.main {
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+.fakeImg {
+    background-color: lightGrey;
+    width: 100%;
+    padding: 20 20;
+    height: 400px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.titleDescr {
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.imgThumbNails {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.myImg {
+    border: 1px solid #ddd;
+    border-radius: 4;
+    padding: 5;
+    width: 70px;
+    height: 70px;
+}
