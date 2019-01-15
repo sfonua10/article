@@ -56,7 +56,21 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Image)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {});
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      title: _this.props.title,
+      mainUrl: "interview-project-17987.herokuapp.com/images/frontend/images/photo_1.jpg",
+      thumbnailUrl: _this.props.thumbnailUrl,
+      i_title: _this.props.i_title,
+      i_description: _this.props.i_description
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleImageClick", function (newUrl) {
+      console.log("image clicked", newUrl);
+
+      _this.setState({
+        mainUrl: newUrl
+      });
+    });
 
     return _this;
   }
@@ -66,23 +80,24 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log("thumbnailUrl", this.state.mainUrl[0]);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 22
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 24
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -90,80 +105,83 @@ function (_Component) {
         href: "/static/test.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 25
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 29
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, this.state.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "fakeImg",
-        src: "http://".concat(this.props.title.images[0].mainUrl),
+        src: "http://".concat(this.state.mainUrl),
         alt: "testImg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 30
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "navbar",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "titleDescr",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 36
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 37
         },
         __self: this
-      }, this.props.title.images[0].title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      }, this.state.i_title[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 38
         },
         __self: this
-      }, this.props.title.images[0].description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.i_description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "imgThumbNails",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 40
         },
         __self: this
-      }, this.props.title.images.map(function (t) {
+      }, this.state.thumbnailUrl.map(function (t) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          key: _this2.props.title,
-          onClick: _this2.props.onUpdateImg,
+          // key={this.props.title}
+          // onClick={() => this.props.onImageClick(t.mainUrl)}
+          onClick: function onClick() {
+            return _this2.handleImageClick(t.mainUrl);
+          },
           className: "myImg",
           src: "http://".concat(t.thumbnailUrl),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 42
           },
           __self: this
         });
@@ -263,6 +281,122 @@ var Navbar = function Navbar() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Navbar);
+
+/***/ }),
+
+/***/ "./components/Video.jsx":
+/*!******************************!*\
+  !*** ./components/Video.jsx ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "/Users/siosaiafonua/Desktop/article/components/Video.jsx";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var Video =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Video, _Component);
+
+  function Video() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Video);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Video)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
+      url: _this.props.videoUrl
+    });
+
+    return _this;
+  }
+
+  _createClass(Video, [{
+    key: "render",
+    value: function render() {
+      console.log("video url", this.state.url);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+        charset: "utf-8",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "/static/test.css",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+        width: "100",
+        height: "100",
+        frameborder: "0",
+        allowfullscreen: true,
+        alt: "video placeholder",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return Video;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Video);
 
 /***/ }),
 
@@ -11528,6 +11662,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Navbar */ "./components/Navbar.jsx");
 /* harmony import */ var _components_Image__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Image */ "./components/Image.jsx");
+/* harmony import */ var _components_Video__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Video */ "./components/Video.jsx");
 var _jsxFileName = "/Users/siosaiafonua/Desktop/article/pages/index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -11540,15 +11675,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -11565,13 +11699,10 @@ function (_Component) {
     _classCallCheck(this, Index);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
-
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleUpdateImage", function () {
-      console.log("Event Handler Called");
-    });
-
     _this.state = {
       articles: [],
+      images: [],
+      content: [],
       isLoaded: false
     };
     return _this;
@@ -11587,13 +11718,33 @@ function (_Component) {
       }).then(function (json) {
         _this2.setState({
           isLoaded: true,
-          articles: json
+          articles: json,
+          images: json.map(function (article) {
+            var myImages = {
+              images: article.images
+            };
+            return myImages;
+          }),
+          content: json.map(function (article) {
+            var myContent = {
+              content: article.content
+            };
+            return myContent;
+          })
         });
       });
-    }
+    } // handleImageClick = newUrl => {
+    //   console.log("Event Handler Called", newUrl);
+    // };
+
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
+      console.log("articles", this.state.articles.video); // console.log(this.state.images);
+      // console.log(this.state.content);
+
       var _this$state = this.state,
           isLoaded = _this$state.isLoaded,
           articles = _this$state.articles;
@@ -11602,7 +11753,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
+            lineNumber: 46
           },
           __self: this
         }, " Loading... ");
@@ -11610,23 +11761,49 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 49
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 36
+            lineNumber: 50
           },
           __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          title: articles[0],
-          onUpdateImg: this.handleUpdateImage,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 37
-          },
-          __self: this
+        }), this.state.articles.map(function (article) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 52
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            key: article.url,
+            onImageClick: _this3.handleImageClick,
+            title: article.title,
+            mainUrl: article.images.map(function (i) {
+              return i.mainUrl;
+            }),
+            thumbnailUrl: article.images,
+            i_title: article.images.map(function (i_t) {
+              return i_t.title;
+            }),
+            i_description: article.images.map(function (i_d) {
+              return i_d.description;
+            }),
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 53
+            },
+            __self: this
+          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Video__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            videoUrl: article.video,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62
+            },
+            __self: this
+          }));
         }));
       }
     }

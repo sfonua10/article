@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import Image from "../components/Image";
+import Video from "../components/Video";
 
 class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
       articles: [],
+      images: [],
+      content: [],
       isLoaded: false
     };
   }
@@ -17,16 +20,27 @@ class Index extends Component {
       .then(json => {
         this.setState({
           isLoaded: true,
-          articles: json
+          articles: json,
+          images: json.map(article => {
+            const myImages = { images: article.images };
+            return myImages;
+          }),
+          content: json.map(article => {
+            const myContent = { content: article.content };
+            return myContent;
+          })
         });
       });
   }
 
-  handleUpdateImage = () => {
-    console.log("Event Handler Called");
-  };
+  // handleImageClick = newUrl => {
+  //   console.log("Event Handler Called", newUrl);
+  // };
 
   render() {
+    console.log("articles", this.state.articles.video);
+    // console.log(this.state.images);
+    // console.log(this.state.content);
     const { isLoaded, articles } = this.state;
     if (!isLoaded) {
       return <div> Loading... </div>;
@@ -34,7 +48,22 @@ class Index extends Component {
       return (
         <article>
           <Navbar />
-          <Image title={articles[0]} onUpdateImg={this.handleUpdateImage} />
+          {this.state.articles.map(article => (
+            <React.Fragment>
+              <Image
+                key={article.url}
+                onImageClick={this.handleImageClick}
+                title={article.title}
+                mainUrl={article.images.map(i => i.mainUrl)}
+                thumbnailUrl={article.images}
+                i_title={article.images.map(i_t => i_t.title)}
+                i_description={article.images.map(i_d => i_d.description)}
+              />
+              <Video videoUrl={article.video} />
+            </React.Fragment>
+          ))}
+
+          {/* <Image title={articles[0]} onUpdateImg={this.handleUpdateImage} /> */}
         </article>
       );
     }
