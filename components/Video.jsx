@@ -13,7 +13,7 @@ class Video extends Component {
           <meta charset="utf-8" />
           <link rel="stylesheet" href="/static/test.css" />
         </Head>
-        {/* <div className="Flexible-container">
+        <div className="Flexible-container">
           <iframe
             width="100"
             height="100"
@@ -21,14 +21,7 @@ class Video extends Component {
             frameborder="0"
             allowfullscreen
           />
-        </div> */}
-                  <iframe
-            width="100"
-            height="100"
-            frameborder="0"
-            allowfullscreen
-            alt="video placeholder"
-          />
+        </div>
       </React.Fragment>
     );
   }
