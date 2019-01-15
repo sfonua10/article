@@ -57,16 +57,18 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Image)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      title: _this.props.title,
+      m_title: _this.props.title,
       mainUrl: "interview-project-17987.herokuapp.com/images/frontend/images/photo_1.jpg",
       thumbnailUrl: _this.props.thumbnailUrl,
-      i_title: _this.props.i_title,
-      i_description: _this.props.i_description
+      title: "Deserunt occaecat occaecat incididunt",
+      description: "Elit Lorem pariatur ullamco labore est dolore magna esse Lorem in duis. Commodo minim eiusmod cillum commodo deserunt deserunt pariatur et et id enim."
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleImageClick", function (newUrl) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleImageClick", function (newUrl, newTitle, newDescr) {
       _this.setState({
-        mainUrl: newUrl
+        mainUrl: newUrl,
+        title: newTitle,
+        description: newDescr
       });
     });
 
@@ -78,23 +80,24 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      // console.log("props", this.props);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20
+          lineNumber: 22
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 24
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -102,69 +105,69 @@ function (_Component) {
         href: "/static/test.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 25
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 27
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 26
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 29
         },
         __self: this
-      }, this.state.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }, this.props.m_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "fakeImg",
         src: "http://".concat(this.state.mainUrl),
         alt: "testImg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 30
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         className: "navbar",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "titleDescr",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 36
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 37
         },
         __self: this
-      }, this.state.i_title[0]), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, this.state.i_description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "imgThumbNails",
+      }, this.state.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 38
+        },
+        __self: this
+      }, this.state.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "imgThumbNails",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
         },
         __self: this
       }, this.state.thumbnailUrl.map(function (t) {
@@ -172,13 +175,13 @@ function (_Component) {
           // key={this.props.title}
           // onClick={() => this.props.onImageClick(t.mainUrl)}
           onClick: function onClick() {
-            return _this2.handleImageClick(t.mainUrl);
+            return _this2.handleImageClick(t.mainUrl, t.title, t.description);
           },
           className: "myImg",
           src: "http://".concat(t.thumbnailUrl),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 42
           },
           __self: this
         });
@@ -11703,37 +11706,51 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
     _this.state = {
-      articles: [],
+      articles: {},
       images: [],
       content: [],
       isLoaded: false
     };
     return _this;
-  }
+  } // componentDidMount() {
+  //   fetch("https://interview-project-17987.herokuapp.com/api/article")
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         articles: json,
+  //         images: json.map(article => {
+  //           const myImages = { images: article.images };
+  //           return myImages;
+  //         }),
+  //         content: json.map(article => {
+  //           const myContent = { content: article.content };
+  //           return myContent;
+  //         })
+  //       });
+  //     });
+  // }
+
 
   _createClass(Index, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
 
-      fetch("https://interview-project-17987.herokuapp.com/api/article").then(function (res) {
+      fetch("https://interview-project-17987.herokuapp.com/api/article/article-1").then(function (res) {
         return res.json();
       }).then(function (json) {
         _this2.setState({
           isLoaded: true,
-          articles: json,
-          images: json.map(function (article) {
-            var myImages = {
-              images: article.images
-            };
-            return myImages;
-          }),
-          content: json.map(function (article) {
-            var myContent = {
-              content: article.content
-            };
-            return myContent;
-          })
+          articles: json // images: json.map(article => {
+          //   const myImages = { images: article.images };
+          //   return myImages;
+          // }),
+          // content: json.map(article => {
+          //   const myContent = { content: article.content };
+          //   return myContent;
+          // })
+
         });
       });
     } // handleImageClick = newUrl => {
@@ -11743,11 +11760,9 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
-      console.log("articles", this.state.articles.video); // console.log(this.state.images);
+      // console.log("main title", this.state.articles.title);
+      // console.log(this.state.images);
       // console.log(this.state.content);
-
       var _this$state = this.state,
           isLoaded = _this$state.isLoaded,
           articles = _this$state.articles;
@@ -11756,7 +11771,7 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 65
           },
           __self: this
         }, " Loading... ");
@@ -11764,49 +11779,33 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("article", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 49
+            lineNumber: 68
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Navbar__WEBPACK_IMPORTED_MODULE_1__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 69
           },
           __self: this
-        }), this.state.articles.map(function (article) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 52
-            },
-            __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            key: article.url,
-            onImageClick: _this3.handleImageClick,
-            title: article.title,
-            mainUrl: article.images.map(function (i) {
-              return i.mainUrl;
-            }),
-            thumbnailUrl: article.images,
-            i_title: article.images.map(function (i_t) {
-              return i_t.title;
-            }),
-            i_description: article.images.map(function (i_d) {
-              return i_d.description;
-            }),
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 53
-            },
-            __self: this
-          }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Video__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            videoUrl: article.video,
-            __source: {
-              fileName: _jsxFileName,
-              lineNumber: 62
-            },
-            __self: this
-          }));
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Image__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          key: articles.url,
+          m_title: articles.title,
+          mainUrl: articles.images.map(function (mainImg) {
+            return mainImg.mainUrl;
+          }),
+          thumbnailUrl: articles.images,
+          title: articles.images.map(function (i_t) {
+            return i_t.title;
+          }),
+          description: articles.images.map(function (i_d) {
+            return i_d.description;
+          }),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 70
+          },
+          __self: this
         }));
       }
     }

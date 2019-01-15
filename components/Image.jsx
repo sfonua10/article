@@ -3,19 +3,21 @@ import Head from "next/head";
 
 class Image extends Component {
   state = {
-    title: this.props.title,
+    m_title: this.props.title,
     mainUrl:
       "interview-project-17987.herokuapp.com/images/frontend/images/photo_1.jpg",
     thumbnailUrl: this.props.thumbnailUrl,
-    i_title: this.props.i_title,
-    i_description: this.props.i_description
+    title: "Deserunt occaecat occaecat incididunt",
+    description:
+      "Elit Lorem pariatur ullamco labore est dolore magna esse Lorem in duis. Commodo minim eiusmod cillum commodo deserunt deserunt pariatur et et id enim."
   };
 
-  handleImageClick = newUrl => {
-    this.setState({ mainUrl: newUrl });
+  handleImageClick = (newUrl, newTitle, newDescr) => {
+    this.setState({ mainUrl: newUrl, title: newTitle, description: newDescr });
   };
 
   render() {
+    // console.log("props", this.props);
     return (
       <React.Fragment>
         <Head>
@@ -24,7 +26,7 @@ class Image extends Component {
         </Head>
         <div className="row">
           <div className="main">
-            <h2>{this.state.title}</h2>
+            <h2>{this.props.m_title}</h2>
             <img
               className="fakeImg"
               src={`http://${this.state.mainUrl}`}
@@ -32,15 +34,17 @@ class Image extends Component {
             />
             <section className="navbar">
               <div className="titleDescr">
-                <h4>{this.state.i_title[0]}</h4>
-                <p>{this.state.i_description}</p>
+                <h4>{this.state.title}</h4>
+                <p>{this.state.description}</p>
               </div>
               <div className="imgThumbNails">
                 {this.state.thumbnailUrl.map(t => (
                   <img
                     // key={this.props.title}
                     // onClick={() => this.props.onImageClick(t.mainUrl)}
-                    onClick={() => this.handleImageClick(t.mainUrl)}
+                    onClick={() =>
+                      this.handleImageClick(t.mainUrl, t.title, t.description)
+                    }
                     className="myImg"
                     src={`http://${t.thumbnailUrl}`}
                   />
