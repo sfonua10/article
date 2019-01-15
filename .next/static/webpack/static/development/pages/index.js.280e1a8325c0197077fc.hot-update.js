@@ -1,8 +1,8 @@
 webpackHotUpdate("static/development/pages/index.js",{
 
-/***/ "./components/Video.jsx":
+/***/ "./components/Image.jsx":
 /*!******************************!*\
-  !*** ./components/Video.jsx ***!
+  !*** ./components/Image.jsx ***!
   \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/siosaiafonua/Desktop/article/components/Video.jsx";
+var _jsxFileName = "/Users/siosaiafonua/Desktop/article/components/Image.jsx";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -38,52 +38,61 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var Video =
+var Image =
 /*#__PURE__*/
 function (_Component) {
-  _inherits(Video, _Component);
+  _inherits(Image, _Component);
 
-  function Video() {
+  function Image() {
     var _getPrototypeOf2;
 
     var _this;
 
-    _classCallCheck(this, Video);
+    _classCallCheck(this, Image);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Video)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Image)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "state", {
-      url: _this.props.videoUrl
+      title: _this.props.title,
+      imageInfo: _this.props.imageInfo // mainUrl:
+      //   "interview-project-17987.herokuapp.com/images/frontend/images/photo_1.jpg",
+      // thumbnailUrl: this.props.thumbnailUrl,
+      // i_title: this.props.i_title,
+      // i_description: this.props.i_description
+
     });
 
     return _this;
   }
 
-  _createClass(Video, [{
+  _createClass(Image, [{
     key: "render",
+    // handleImageClick = newUrl => {
+    //   this.setState({ mainUrl: newUrl });
+    // };
     value: function render() {
-      console.log("video url", this.state.url);
+      console.log("props", this.props);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 23
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 24
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 25
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -91,39 +100,39 @@ function (_Component) {
         href: "/static/test.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 26
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "Flexible-container",
+        className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 28
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-        style: {
-          width: 100,
-          heigth: 100
-        },
-        src: this.state.url.url,
-        frameborder: "0",
-        allowfullscreen: true,
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "main",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 29
         },
         __self: this
-      })));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, this.state.title))));
     }
   }]);
 
-  return Video;
+  return Image;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Video);
+/* harmony default export */ __webpack_exports__["default"] = (Image);
 
 /***/ })
 
 })
-//# sourceMappingURL=index.js.4a83faa226e007a4c8bf.hot-update.js.map
+//# sourceMappingURL=index.js.280e1a8325c0197077fc.hot-update.js.map

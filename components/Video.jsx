@@ -6,7 +6,6 @@ class Video extends Component {
     url: this.props.videoUrl
   };
   render() {
-    console.log("video url", this.state.url);
     return (
       <React.Fragment>
         <Head>

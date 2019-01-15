@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,11 @@ const Navbar = () => {
             <a> About </a>
           </Link>
         </li>
+        {/* <li>
+          <Link href={`/${this.state.url}`}>
+            <a> About </a>
+          </Link>
+        </li> */}
       </ul>
       <style jsx>{`
         ul {

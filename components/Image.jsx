@@ -16,7 +16,6 @@ class Image extends Component {
   };
 
   render() {
-    console.log("thumbnailUrl", this.state.mainUrl[0]);
     return (
       <React.Fragment>
         <Head>
