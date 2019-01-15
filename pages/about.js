@@ -6,8 +6,8 @@ const About = () => (
     <Head>
       <meta charset="utf-8" />
       <link rel="stylesheet" href="/static/test.css" />
-    </Head>
-    <p className="some-class-name">Is this working!</p>
+    </Head>{" "}
+    <p className="some-class-name"> Is this working! </p>{" "}
   </div>
 );
 
