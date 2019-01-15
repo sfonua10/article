@@ -11,15 +11,10 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="/about">
+          <Link href="/article-1">
             <a> About </a>
           </Link>
         </li>
-        {/* <li>
-          <Link href={`/${this.state.url}`}>
-            <a> About </a>
-          </Link>
-        </li> */}
       </ul>
       <style jsx>{`
         ul {
