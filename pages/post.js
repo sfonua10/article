@@ -1,18 +1,30 @@
 import Layout from "../components/MyLayout";
+import Head from "next/head";
 import fetch from "isomorphic-unfetch";
 import { Component } from "react";
+import Image from "../components/Image";
 
 class Post extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      article: props.article
+    };
   }
   render() {
+    console.log(this.state.article);
     return (
-      <Layout>
-        <h1>{props.url}</h1>
-        {/* <p>{props.show.summary.replace(/<[/]?p>/g, "")}</p>
-        <img src={props.show.image.medium} /> */}
-      </Layout>
+      <React.Fragment>
+        <Layout>
+          <h1>{this.state.article.title}</h1>
+          <Image
+            key={this.state.article.url}
+            images={this.state.article.images}
+          />
+
+          {/* {this.state.article.content.map(text => text.text)} */}
+        </Layout>
+      </React.Fragment>
     );
   }
 }

@@ -1,0 +1,82 @@
+@import url('https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans');
+/* Page Layout */
+
+.container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+/* Main Section */
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    flex: 3;
+}
+
+.main h2 {
+    font-size: 32px;
+    margin: 1rem 0;
+    color: #50c6db;
+}
+
+.main p {
+    font-size: 1rem;
+    margin-bottom: .75rem;
+}
+
+.main img {
+    width: 100%;
+}
+
+.thumbImg {
+    border: 1px solid #ddd;
+    border-radius: 4;
+    padding: 5;
+    width: 70px !important;
+    height: 70px;
+}
+
+header,
+footer {
+    display: flex;
+    flex-direction: row;
+}
+
+header .profile-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+header .profile-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+header .follow-btn {
+    display: flex;
+
+    margin: 0 0 0 auto;
+}
+
+header .follow-btn button {
+    border: 0;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+header h5,
+header h6 {
+    display: flex;
+
+    margin: 0;
+}

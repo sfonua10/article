@@ -27,7 +27,7 @@ class Index extends Component {
         <ul>
           {this.state.articles.map(obj => (
             <li key={obj.id}>
-              <Link as={`/p/${obj.id}`} href={`/post?title=${obj.title}`}>
+              <Link as={`/p/${obj.id}`} href={`/post?id=${obj.id}`}>
                 <a> {obj.title} </a>
               </Link>
             </li>
