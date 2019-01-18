@@ -210,7 +210,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "mainImg",
         src: "http://".concat(this.state.mainImage)
-      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-name"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, this.state.imageTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h6", null, this.state.imageDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "follow-btn"
@@ -220,7 +220,7 @@ function (_Component) {
           alt: thumbnails.description,
           src: "http://".concat(thumbnails.thumbnailUrl)
         });
-      }))));
+      })))));
     }
   }]);
 

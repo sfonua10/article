@@ -22,22 +22,23 @@ class Image extends Component {
               <img className="mainImg" src={`http://${this.state.mainImage}`} />
             </section>
           </div>
+          <header>
+            <div className="profile-name">
+              <h5>{this.state.imageTitle}</h5>
+              <h6>{this.state.imageDescription}</h6>
+            </div>
+            <div className="follow-btn">
+              {this.state.imageInfo.map(thumbnails => (
+                <img
+                  className="profile-thumbnail"
+                  alt={thumbnails.description}
+                  src={`http://${thumbnails.thumbnailUrl}`}
+                />
+              ))}
+            </div>
+          </header>
         </div>
-        <header>
-          <div className="profile-name">
-            <h5>{this.state.imageTitle}</h5>
-            <h6>{this.state.imageDescription}</h6>
-          </div>
-          <div className="follow-btn">
-            {this.state.imageInfo.map(thumbnails => (
-              <img
-                className="profile-thumbnail"
-                alt={thumbnails.description}
-                src={`http://${thumbnails.thumbnailUrl}`}
-              />
-            ))}
-          </div>
-        </header>
+
         {/* <h4>{this.state.imageTitle}</h4>
               <h4>{this.state.imageDescription}</h4>
               <div className="imgThumbNails">
