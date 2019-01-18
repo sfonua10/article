@@ -8,6 +8,15 @@ class Image extends Component {
     imageTitle: this.props.images[0].title,
     imageDescription: this.props.images[0].description
   };
+
+  handleImageClick = (newUrl, newTitle, newDescr) => {
+    this.setState({
+      mainImage: newUrl,
+      imageTitle: newTitle,
+      imageDescription: newDescr
+    });
+  };
+
   render() {
     console.log("props", this.props);
     return (
@@ -33,6 +42,13 @@ class Image extends Component {
                   className="profile-thumbnail"
                   alt={thumbnails.description}
                   src={`http://${thumbnails.thumbnailUrl}`}
+                  onClick={() =>
+                    this.handleImageClick(
+                      thumbnails.mainUrl,
+                      thumbnails.title,
+                      thumbnails.description
+                    )
+                  }
                 />
               ))}
             </div>

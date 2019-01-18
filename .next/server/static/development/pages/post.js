@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -189,12 +189,22 @@ function (_Component) {
       imageDescription: _this.props.images[0].description
     });
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleImageClick", function (newUrl, newTitle, newDescr) {
+      _this.setState({
+        mainImage: newUrl,
+        imageTitle: newTitle,
+        imageDescription: newDescr
+      });
+    });
+
     return _this;
   }
 
   _createClass(Image, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       console.log("props", this.props);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
         charset: "utf-8"
@@ -218,7 +228,10 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "profile-thumbnail",
           alt: thumbnails.description,
-          src: "http://".concat(thumbnails.thumbnailUrl)
+          src: "http://".concat(thumbnails.thumbnailUrl),
+          onClick: function onClick() {
+            return _this2.handleImageClick(thumbnails.mainUrl, thumbnails.title, thumbnails.description);
+          }
         });
       })))));
     }
@@ -386,7 +399,7 @@ function () {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*****************************!*\
   !*** multi ./pages/post.js ***!
   \*****************************/
