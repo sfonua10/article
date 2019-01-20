@@ -33,8 +33,8 @@ class Image extends Component {
           </div>
           <header>
             <div className="profile-name">
-              <h5>{this.state.imageTitle}</h5>
-              <h6>{this.state.imageDescription}</h6>
+              <h4>{this.state.imageTitle}</h4>
+              <h5>{this.state.imageDescription}</h5>
             </div>
             <div className="follow-btn">
               {this.state.imageInfo.map(thumbnails => (

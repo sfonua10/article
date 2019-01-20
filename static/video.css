@@ -1,0 +1,16 @@
+@import url("https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans");
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 210px;
+    height: 186px;
+    font-family: 'Open Sans', serif;
+}
+
+h5,
+h6 {
+    margin: 0;
+    padding: 2px;
+}
